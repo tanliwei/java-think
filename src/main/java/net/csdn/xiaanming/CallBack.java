@@ -1,4 +1,4 @@
-package cn.tanlw.java.think;
+package net.csdn.xiaanming;
 
 /**
  * 这是一个回调接口
