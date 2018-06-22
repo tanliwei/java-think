@@ -1,7 +1,8 @@
-package cn.tanlw.java.think;
+package net.csdn.xiaanming;
 
 
 /**
+ * 一个经典例子让你彻彻底底理解java回调机制
  * https://blog.csdn.net/xiaanming/article/details/8703708/
  * 测试类
  * @author xiaanming
