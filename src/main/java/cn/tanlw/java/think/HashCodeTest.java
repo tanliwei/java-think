@@ -4,7 +4,7 @@ package cn.tanlw.java.think;
  * 引用数据类型直接打印的话就是类名@地址值 -- https://zhidao.baidu.com/question/2120638214865706667.html
  * @create 2018/7/6
  */
-public class StringTest {
+public class HashCodeTest {
     public static void main(String[] args) {
         Object o = new Object();
         String a = "a";
