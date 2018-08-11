@@ -1,4 +1,4 @@
-package cn.tanlw.java.file;
+package cn.tanlw.interview.logCounter.x;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static cn.tanlw.java.file.RandomAccessFileTest.*;
+import static cn.tanlw.interview.logCounter.x.RandomAccessFileTest.*;
 
 /**
  * @create 2018/8/8
