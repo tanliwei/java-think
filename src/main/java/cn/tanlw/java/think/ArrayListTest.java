@@ -1,5 +1,8 @@
 package cn.tanlw.java.think;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,5 +17,12 @@ public class ArrayListTest {
             //int newCapacity = oldCapacity + (oldCapacity >> 1);
             a.add(i);
         }
+    }
+
+
+    @Test
+    public void sizeTest(){
+        List list = new ArrayList(10);
+        Assert.assertEquals(0, list.size());
     }
 }
