@@ -1,5 +1,8 @@
 package cn.tanlw.interview.reverseLink;
 
+/**
+ * 反转链表
+ */
 public class ReverseLinkList {
     public static void main(String[] args) {
         Node head = init();
@@ -17,12 +20,12 @@ public class ReverseLinkList {
         doReverse(subHead, subTail, n-m);
     }
 
-    private static void doReverse(Node subHead, Node subTail, int times) {
+    private static void doReverse(Node subHead, Node subTail, int steps) {
         Node current = subHead.next;
         Node previous = subTail;
-        subHead.next = null;
         int count = 0;
-        while(current != null && count <= times){
+        int times = steps + 1;
+        while(current != null && count < times){
             Node temp = current.next;
             current.next = previous;
             previous = current;
