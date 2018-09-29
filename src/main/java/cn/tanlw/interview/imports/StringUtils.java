@@ -291,7 +291,7 @@ public abstract class StringUtils {
 
 
 	/**
-	 * Test if the given {@code String} starts with the specified prefix,
+	 * TestB if the given {@code String} starts with the specified prefix,
 	 * ignoring upper/lower case.
 	 * @param str the {@code String} to check
 	 * @param prefix the prefix to look for
@@ -313,7 +313,7 @@ public abstract class StringUtils {
 	}
 
 	/**
-	 * Test if the given {@code String} ends with the specified suffix,
+	 * TestB if the given {@code String} ends with the specified suffix,
 	 * ignoring upper/lower case.
 	 * @param str the {@code String} to check
 	 * @param suffix the suffix to look for
@@ -336,7 +336,7 @@ public abstract class StringUtils {
 	}
 
 	/**
-	 * Test whether the given string matches the given substring
+	 * TestB whether the given string matches the given substring
 	 * at the given index.
 	 * @param str the original string (or StringBuilder)
 	 * @param index the index in the original string to start matching against
