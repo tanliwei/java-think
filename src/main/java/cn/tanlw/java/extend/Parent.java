@@ -9,6 +9,7 @@ public class Parent {
 
     }
 
+    protected void protedtedMethod(){}
 
     private void privateMethod(){
         System.out.println("privateMethod");

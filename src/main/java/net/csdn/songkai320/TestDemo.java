@@ -61,7 +61,7 @@ public class TestDemo {
         System.out.println(obj.getOb());
 
         //下面这行代码，编译出错： The argument cannot be primitive type
-//        TestDemo<int> a;
+//        Test<int> a;
     }
 
 }
