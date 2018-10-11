@@ -3,7 +3,7 @@ package cn.tanlw.java.util.snowflake;
 import org.junit.Test;
 
 /**
- * @author liwei.tan@baozun.com
+ * @author liwei.tan
  * @Date 2018/9/4 17:08
  */
 public class BitOperation {
