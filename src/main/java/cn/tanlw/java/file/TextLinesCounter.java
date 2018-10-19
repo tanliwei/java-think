@@ -13,7 +13,12 @@ public class TextLinesCounter {
         try {
             InputStreamReader reader = new InputStreamReader(new ByteArrayInputStream(input.getBytes("UTF-8")));
             BufferedReader br = new BufferedReader(reader);
-            String line = null;
+            String line;
+            /**Console:
+             a:
+               b: 1
+               c: 2
+             */
             while( (line = br.readLine()) != null){
                 System.out.println(line);
             }
