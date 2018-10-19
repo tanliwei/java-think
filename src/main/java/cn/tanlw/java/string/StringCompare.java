@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 /**
- * @author liwei.tan@baozun.com
+ * @author liwei.tan
  * @Date 2018/9/20 13:33
  */
 public class StringCompare {

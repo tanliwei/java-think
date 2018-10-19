@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author liwei.tan@baozun.com
+ * @author liwei.tan
  * @Date 2018/9/3 17:54
  */
 //@lombok.extern.slf4j.Slf4j
