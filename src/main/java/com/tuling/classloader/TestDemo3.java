@@ -1,5 +1,18 @@
 package com.tuling.classloader;
 
+
+/**
+ * D:\tmp\com\tuling\classloader 目录下新建文件 Demo.java （并编译）：
+ package com.tuling.classloader;
+
+ public class Demo{
+
+ public Demo(){
+ System.out.println("B Demo, " + this.getClass().getClassLoader());
+ }
+ }
+ }
+ */
 /**
  * @Creator Tan Liwei
  * @Date 2018/10/6 14:31
@@ -27,15 +40,3 @@ public class TestDemo3 {
     }
 }
 
-/**
- * D:/tmp/ 目录下新建文件 Demo.java （并编译）：
- package com.tuling.classloader;
-
- public class Demo{
-
- public Demo(){
- System.out.println("B Demo, " + this.getClass().getClassLoader());
- }
- }
- }
- */
