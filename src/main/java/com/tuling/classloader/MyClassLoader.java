@@ -5,6 +5,10 @@ import java.io.*;
 /**
  * @Creator Tan Liwei
  * @Date 2018/10/6 14:05
+ *
+ * 参考：
+ * JVM类加载机制
+ * https://blog.csdn.net/zhangliangzi/article/details/51338291
  */
 public class MyClassLoader extends ClassLoader {
 

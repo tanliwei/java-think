@@ -10,12 +10,12 @@ public class TestDemo2 {
         //系统类加载器， 加载本项目的路径下的class
         MyClassLoader loader = new MyClassLoader("ZhangFei", "D:/tmp/");
         try {
+            Class<?> c = loader.loadClass("com.tuling.classloader.Demo");
             /**
              * Console:
              * 2
              * A Demo
              */
-            Class<?> c = loader.loadClass("com.tuling.classloader.Demo");
             c.newInstance();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -27,14 +27,3 @@ public class TestDemo2 {
     }
 }
 
-/**
- * D:/tmp/ 目录下新建文件 Demo.java （并编译）：
- package com.tuling.classloader;
-
- public class Demo{
-
- public Demo(){
- System.out.println("Demo, " + this.getClass().getClassLoader());
- }
- }
- */

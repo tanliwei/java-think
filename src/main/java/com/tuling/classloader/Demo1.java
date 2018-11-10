@@ -17,6 +17,12 @@ public class Demo1 {
     public static int tmp = 1;//tmp在执行这个语句之前值为0，非final
 
     public static void main(String[] args) {
+        /**
+         * Console:
+         * 1
+         * 3
+         */
+        System.out.println(tmp);
         tmp = 3;
         System.out.println(tmp);
     }
