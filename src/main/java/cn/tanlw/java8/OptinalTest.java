@@ -47,7 +47,11 @@ public class OptinalTest {
     public void testOf(){
         Integer a = null;
         Optional<Integer> value1 = Optional.of(a);
-        System.out.println(value1);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testOrElseThrow(){
+        Object o = null;
+        Optional.ofNullable(o).orElseThrow(NullPointerException::new);
+    }
 }
