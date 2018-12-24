@@ -117,12 +117,28 @@ public class LambdaTest {
         }
 
         public String getName() {
-            System.out.println(name);
             return name;
+        }
+
+        public void setNo(int no) {
+            this.no = no;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
 
         public int getAge(){
             return age;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "age=" + age +
+                    ", no=" + no +
+                    ", name='" + name + '\'' +
+                    '}';
         }
     }
 
@@ -165,4 +181,30 @@ public class LambdaTest {
             return new Person(index++, "StormTestUser"+index, random.nextInt(100));
         }
     }
+
+    @Test
+    public void concatTest(){
+        List<Person> classA = new ArrayList<>();
+        List<Person> classB = new ArrayList<>();
+        classA.add(new Person(1, "Tom"));
+        classA.add(new Person(2, "Jack"));
+
+        classB.add(new Person(3, "Bruce"));
+        classB.add(new Person(4, "Eden"));
+
+        Stream.concat(classA.stream(), classB.stream()).forEach( p -> p.setName(p.getName()+"concat"));
+        /**
+         * Console：
+         Person{age=0, no=1, name='Tomconcat'}
+         Person{age=0, no=2, name='Jackconcat'}
+         */
+        classA.stream().forEach(System.out::println);
+        /**
+         * Console:
+         Person{age=0, no=3, name='Bruceconcat'}
+         Person{age=0, no=4, name='Edenconcat'}
+         */
+        classB.stream().forEach(System.out::println);
+    }
+
 }
