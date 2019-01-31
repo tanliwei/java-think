@@ -8,6 +8,17 @@ import java.util.stream.Collectors;
 public class FilterTest {
 
     @Test
+    public void count(){
+        String[] arrs = {"abc", "bcd", "cda", "dab"};
+        long a = Arrays.stream(arrs).filter(x -> x.contains("a")).count();
+        /**
+         * OUTPUT:
+         * 3
+         */
+        System.out.println(a);
+    }
+
+    @Test
     public void test() {
         String[] arrs = {"abc", "bcd", "cda", "dab"};
         Arrays.stream(arrs).forEach(System.out::println);
