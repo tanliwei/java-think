@@ -19,6 +19,7 @@ public class LocalDateTest {
         System.out.println(dtNow.atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli());
 
         System.out.println(dtNow.getMonth().toString());
+        System.out.println(String.format("%s",dtNow));
     }
 
     @Test
