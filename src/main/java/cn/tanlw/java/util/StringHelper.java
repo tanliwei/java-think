@@ -1,6 +1,6 @@
 package cn.tanlw.java.util;
 
-import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.springframework.util.StringUtils;
 
 import java.net.MalformedURLException;
@@ -15,6 +15,13 @@ import java.util.regex.Pattern;
 //@lombok.extern.slf4j.Slf4j
 public class StringHelper {
 
+    @Test
+    public void test(){
+        /*OUTPUT:
+        null:null
+         */
+        System.out.println(String.format("null:%s",null));
+    }
 
     public static boolean isIPv4(String host){
         if (org.springframework.util.StringUtils.isEmpty(host)) {
