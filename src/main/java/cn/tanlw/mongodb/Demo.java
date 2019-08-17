@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import java.util.HashSet;
 import java.util.function.Consumer;
 
 /**
@@ -28,6 +29,9 @@ public class Demo {
     }
 
     private static void insert(MongoDatabase test) {
+        HashSet<String> collectionNames = test.listCollectionNames().into(new HashSet<>());
+        if (collectionNames.contains("customers"))
+            return;
         test.createCollection("customers");
         MongoCollection<Document> customers = test.getCollection("customers");
         Document document = new Document();
