@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
@@ -99,21 +100,51 @@ public class LambdaTest {
                 map(Person::getName).limit(10).skip(3).collect(Collectors.toList());
         System.out.println(personList2);
     }
+    
+    @Test
+    public void testGroupingByToMap(){
+        List<Person> persons = new ArrayList();
+        for (int i = 1; i <= 10; i++) {
+            Person person = new Person(i, "name" + i, (i%2)==0);
+            persons.add(person);
+        }
+        Map<Boolean, List<Person>> collect = persons.stream().collect(Collectors.groupingBy(Person::isAdult));
+        collect.entrySet().stream()
+                .forEach(entry -> System.out.println("key:"+entry.getKey() + " " + "value:"+entry.getValue()));
+        //The result of each element should be unique 
+        Map<Integer, Boolean> collect2 = persons.stream().collect(Collectors.toMap(Person::getNo, Person::isAdult));
+        collect2.entrySet().forEach(entry -> System.out.println("key: "+entry.getKey() + " value:"+entry.getValue()));
+    }
 
     private class Person {
         private int age;
         public int no;
         private String name;
+        public boolean adult = false;
 
         public Person(int no, String name) {
             this.no = no;
             this.name = name;
         }
 
+        public Person(int no, String name, boolean adult) {
+            this.no = no;
+            this.name = name;
+            this.adult = adult;
+        }
+
         public Person(int i, String s, int i1) {
             this.no = i;
             this.name = s;
             this.age = i1;
+        }
+
+        public int getNo() {
+            return no;
+        }
+
+        public boolean isAdult() {
+            return adult;
         }
 
         public String getName() {
@@ -138,6 +169,7 @@ public class LambdaTest {
                     "age=" + age +
                     ", no=" + no +
                     ", name='" + name + '\'' +
+                    ", adult=" + adult +
                     '}';
         }
     }
