@@ -20,4 +20,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
     compile 'com.google.code.gson:gson:2.8.5'
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+    compile group: 'commons-net', name: 'commons-net', version: '2.2'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.47'
+
+
 }
