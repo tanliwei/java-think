@@ -7,7 +7,7 @@ package cn.tanlw.mat;
  */
 public class MemoryLeak {
     public static void main(String[] args) {
-        while(1<2){
+        while(true){
             Object o = new Object();
         }
     }

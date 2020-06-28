@@ -3,7 +3,7 @@ package cn.tanlw.mat;
 /**
  * 模拟大对象, 使用MAT分析
  *
- * 列出pid: jps / tasklist | findstr java.exe
+ * 列出pid: jps /tasklist | findstr "app name"
  * 输出heap.bin:  jmap -heap:format=b pid
  * 使用MAT分析 Top Consumers
  * 查看年轻代(Eden Space, From, To)和老年代(PS Old Generation)的使用情况 jmap -heap pid
@@ -18,7 +18,7 @@ public class BigArray {
                 bigArr[i][j] = new Integer(i+j);
             }
         }
-        while(1 < 2){
+        while(true){
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException e) {

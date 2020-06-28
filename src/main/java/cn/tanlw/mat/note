@@ -1,0 +1,43 @@
+JVM性能调优监控工具jps、jstack、jmap、jhat、jstat、hprof使用详解     https://my.oschina.net/feichexia/blog/196575
+
+jps主要用来输出JVM中运行的进程状态信息。语法格式如下：
+
+jps [options] [hostid]
+    如果不指定hostid就默认为当前主机或服务器。
+
+    命令行参数选项说明如下：
+
+-q 不输出类名、Jar名和传入main方法的参数
+-m 输出传入main方法的参数
+-l 输出main类或Jar的全限名
+-v 输出传入JVM的参数
+
+jstack主要用来查看某个Java进程内的线程堆栈信息。语法格式如下：
+
+jstack [option] pid
+jstack [option] executable core
+jstack [option] [server-id@]remote-hostname-or-ip
+    命令行参数选项说明如下：
+
+-l long listings，会打印出额外的锁信息，在发生死锁时可以用jstack -l pid来观察锁持有情况
+-m mixed mode，不仅会输出Java堆栈信息，还会输出C/C++堆栈信息（比如Native方法）
+
+root@ubuntu:/# ps -ef | grep mrf-center | grep -v grep
+root     21711     1  1 14:47 pts/3    00:02:10 java -jar mrf-center.jar
+
+printf "%x\n" 21742
+
+root@ubuntu:/# jstack 21711 | grep 54ee
+"PollIntervalRetrySchedulerThread" prio=10 tid=0x00007f950043e000 nid=0x54ee in Object.wait() [0x00007f94c6eda000]
+
+jmap -heap pid查看进程堆内存使用情况
+jmap -dump:format=b,file=dumpFileName pid
+jmap -histo[:live] pid查看堆内存中的对象数目、大小统计直方图，如果带上live则只统计活对象
+
+
+jstat [ generalOption | outputOptions vmid [interval[s|ms] [count]] ]
+jstat -gc 3964 250 4
+
+
+=================
+windows上查看某一进程下有哪些线程dos命令   https://blog.csdn.net/zht741322694/article/details/88925503
